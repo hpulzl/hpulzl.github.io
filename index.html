@@ -336,164 +336,24 @@
       
         
           
-            <h2 id="1-文件指令的基本操作"><a href="#1-文件指令的基本操作" class="headerlink" title="- 1.文件指令的基本操作"></a>- 1.文件指令的基本操作</h2><p>pwd –查看当前位置</p>
-<pre><code>$ pwd
+          - 1.文件指令的基本操作pwd –查看当前位置
+$ pwd
 /home/lzl/lzl
-</code></pre><p>cd –进入某个文件夹</p>
-<pre><code>进入familyA文件中    
+cd –进入某个文件夹
+进入familyA文件中    
 ~/lzl$ cd familyA/
 ~/lzl/familyA
 $ cd ..
-</code></pre><p>ls –显示该路径下的所有信息</p>
-<pre><code>~/lzl$ ls
-familyA  Son.txt  study01.txt  tmp_study
-~/lzl$ ls -l
-total 36
-drwxrwxr-x 4 lzl lzl  4096 Sep 28 01:15 familyA
--rw-rw-r-- 1 lzl lzl  1625 Sep 28 03:01 Son.txt
--rw-rw-r-- 1 lzl lzl 22035 Sep 29 23:24 study01.txt
-drwxrwxr-x 2 lzl lzl  4096 Sep 28 01:08 tmp_study
-</code></pre><p>mkdir –创建文件夹</p>
-<pre><code>~/lzl$ mkdir linuxStudy
-~/lzl$ ls -l
-total 40
-drwxrwxr-x 4 lzl lzl  4096 Sep 28 01:15 familyA
-drwxrwxr-x 2 lzl lzl  4096 Oct 11 23:42 linuxStudy
--rw-rw-r-- 1 lzl lzl  1625 Sep 28 03:01 Son.txt
--rw-rw-r-- 1 lzl lzl 22035 Sep 29 23:24 study01.txt
-drwxrwxr-x 2 lzl lzl  4096 Sep 28 01:08 tmp_study
-</code></pre><p>touch –创建一个新文件</p>
-<pre><code>lzl@ubuntu:~/lzl$ cd linuxStudy/
-lzl@ubuntu:~/lzl/linuxStudy$ touch study01.txt
-lzl@ubuntu:~/lzl/linuxStudy$ ls -l
-total 0
--rw-rw-r-- 1 lzl lzl 0 Oct 11 23:44 study01.txt
-</code></pre><p>touch –创建一个带内容的文件</p>
-<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ cat study01.txt 
-lzl@ubuntu:~/lzl/linuxStudy$ echo &quot;hello Linux!&quot; &gt; study01.txt 
-lzl@ubuntu:~/lzl/linuxStudy$ cat study01.txt 
-hello Linux!
-</code></pre><p>cp –拷贝文件    </p>
-<blockquote>
-<p>cp +文件名 +路径</p>
-</blockquote>
-<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ cp study01.txt /home/lzl/lzl/familyA/
-lzl@ubuntu:~/lzl/linuxStudy$ cd ../familyA/
-lzl@ubuntu:~/lzl/familyA$ ls -l
-total 12
--rw-rw-r-- 1 lzl lzl0 Sep 28 01:15 daughter.txt
--rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 erzi
-drwxrwxr-x 2 lzl lzl 4096 Sep 28 01:15 fangzi
--rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 father.txt
-drwxrwxr-x 9 lzl lzl 4096 Sep 28 01:45 house
--rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 mothre.txt
--rw-rw-r-- 1 lzl lzl0 Sep 28 01:15 nver
--rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 son.txt
--rw-rw-r-- 1 lzl lzl   13 Oct 11 23:49 study01.txt
-</code></pre><p>rm –删除文件</p>
-<blockquote>
-<p>rm +文件名（必须是文件名）</p>
-</blockquote>
-<pre><code>lzl@ubuntu:~/lzl/familyA$ rm fangzi
-rm: cannot remove &apos;fangzi&apos;: Is a directory
-lzl@ubuntu:~/lzl/familyA$ rm erzi
-lzl@ubuntu:~/lzl/familyA$ ls -l
-</code></pre><p>more –显示文件内容</p>
-<blockquote>
-<p>more less +文件名 （分页显示内容）<br>more +文件名</p>
-</blockquote>
-<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ more less study01.txt 
-以下是内容
-more: stat of less failed: No such file or directory
-::::::::::::::
-study01.txt
-::::::::::::::
-hello Linux!
-lzl@ubuntu:~/lzl/linuxStudy$ cd ..
-lzl@ubuntu:~/lzl$ more less study01.txt 
-more: stat of less failed: No such file or directory
+ls –显示该路径下的所有信息
+~/lzl$ ls
+familyA  
+          ...
 
-lzl@ubuntu:~/lzl$ more study01.txt
-以下是内容 
-Script started on Wed 28 Sep 2016 01:13:03 AM PDT
-lzl@ubuntu:~/lzl$ cd familyA/
-lzl@ubuntu:~/lzl/familyA$ ls -
-l
-total 0
-lzl@ubuntu:~/lzl/familyA$ touc
-h father.txt
-lzl@ubuntu:~/lzl/familyA$ touc
-h mothre.txt
-</code></pre><p>wc –显示文档的行数、字数、字符数</p>
-<pre><code>lzl@ubuntu:~/lzl$ wc study01.txt 
-  380  2408 22035 study01.txt
-</code></pre><p>find –查找指定的文件</p>
-<pre><code>lzl@ubuntu:~/lzl$ find -name study01.txt 
-./study01.txt
-./familyA/study01.txt
-./linuxStudy/study01.txt
-./tmp_study/study01.txt
-</code></pre><p>grep –查找指定字符串</p>
-<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ grep hello study01.txt 
-hello Linux!
-</code></pre><p>tree –显示目录树</p>
-<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ tree
-.
-└── study01.txt
-
-0 directories, 1 file
-</code></pre><p>rmdir –删除空文件夹</p>
-<blockquote>
-<p>rmdir +文件夹（文件夹中是空的文件）</p>
-</blockquote>
-<pre><code>lzl@ubuntu:~/lzl$ rmdir tmp_study/
-rmdir: failed to remove &apos;tmp_study/&apos;: Directory not empty
-
-lzl@ubuntu:~/lzl$ mkdir hello
-lzl@ubuntu:~/lzl$ rmdir hello
-</code></pre><p>ln –连接</p>
-<blockquote>
-<p>ln +路径名 +虚拟路径</p>
-</blockquote>
-<pre><code>lzl@ubuntu:~/lzl/familyA/house$ sudo passwd
-[sudo] password for lzl: 
-Enter new UNIX password: 
-Retype new UNIX password: 
-passwd: password updated successfully
-lzl@ubuntu:~/lzl/familyA/house$ su root
-Password: 
-root@ubuntu:/home/lzl/lzl/familyA/house# ln -s /home/lzl/lzl/familyA/house/roomA /home/roomA
-root@ubuntu:/home/lzl/lzl/familyA/house# 
-</code></pre><h2 id="2-系统管理命令"><a href="#2-系统管理命令" class="headerlink" title="- 2.系统管理命令"></a>- 2.系统管理命令</h2><p>stat –显示指定文件的相关信息</p>
-<pre><code>lzl@ubuntu:/home$ stat lzl
-  File: &apos;lzl&apos;
-  Size: 4096          Blocks: 8          IO Block: 4096   directory
-Device: 801h/2049d    Inode: 1325139     Links: 22
-Access: (0755/drwxr-xr-x)  Uid: ( 1000/     lzl)   Gid: ( 1000/     lzl)
-Access: 2016-10-11 23:13:08.798006194 -0700
-Modify: 2016-10-12 00:42:40.961904505 -0700
-Change: 2016-10-12 00:42:40.961904505 -0700
- Birth: -
-</code></pre><p>who、w –显示在线登录用户</p>
-<pre><code>lzl@ubuntu:/home$ w
- 02:53:52 up  3:50,  1 user,  load average: 0.04, 0.03, 0.00
-USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
-lzl      tty7     :0               23:10    3:50m 55.34s  0.42s /sbin/upstart -
-lzl@ubuntu:/home$ who
-lzl      tty7         2016-10-11 23:10 (:0)
-</code></pre><p>whoami –显示用户自己的身份</p>
-<pre><code>lzl@ubuntu:/home$ whoami
-lzl
-</code></pre><p>hostname –显示主机名称<br>hostname -i –显示主机IP</p>
-<pre><code>lzl@ubuntu:/home$ hostname
-ubuntu
-lzl@ubuntu:/home$ hostname -i
-127.0.1.1
-</code></pre><p>uname –显示系统信息<br>uname -a 显示全部信息（内核名称，主机名，等）</p>
-<pre><code>lzl@ubuntu:/home$ uname -a
-Linux ubuntu 4.4.0-38-generic #57-Ubuntu SMP Tue Sep 6 15:42:33 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
-</code></pre>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/12/Linux基本指令学习（一）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -611,9 +471,15 @@ Linux ubuntu 4.4.0-38-generic #57-Ubuntu SMP Tue Sep 6 15:42:33 UTC 2016 x86_64 
       
         
           
-            <p>国庆节利用了一天的时间搭建了关于hexo的博客平台，平时要努力学习一些新的技术与大家分享。</p>
+          国庆节利用了一天的时间搭建了关于hexo的博客平台，平时要努力学习一些新的技术与大家分享。
 
           
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/10/07/关于hexo的第一篇博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
