@@ -336,22 +336,61 @@
       
         
           
-            <ul>
-<li>1.文件指令的基本操作</li>
-<li><p>pwd –查看当前位置</p>
-<p>  $ pwd<br>  /home/lzl/lzl<br>cd –进入某个文件夹</p>
-<p>  进入familyA文件中<br>  ~/lzl$ cd familyA/<br>  ~/lzl/familyA<br>  $ cd ..<br>ls –显示该路径下的所有信息</p>
-<p>  ~/lzl$ ls<br>  familyA  Son.txt  study01.txt  tmp_study<br>  ~/lzl$ ls -l<br>  total 36<br>  drwxrwxr-x 4 lzl lzl  4096 Sep 28 01:15 familyA<br>  -rw-rw-r– 1 lzl lzl  1625 Sep 28 03:01 Son.txt<br>  -rw-rw-r– 1 lzl lzl 22035 Sep 29 23:24 study01.txt<br>  drwxrwxr-x 2 lzl lzl  4096 Sep 28 01:08 tmp_study<br>mkdir –创建文件夹</p>
-<p>  ~/lzl$ mkdir linuxStudy<br>  ~/lzl$ ls -l<br>  total 40<br>  drwxrwxr-x 4 lzl lzl  4096 Sep 28 01:15 familyA<br>  drwxrwxr-x 2 lzl lzl  4096 Oct 11 23:42 linuxStudy<br>  -rw-rw-r– 1 lzl lzl  1625 Sep 28 03:01 Son.txt<br>  -rw-rw-r– 1 lzl lzl 22035 Sep 29 23:24 study01.txt<br>  drwxrwxr-x 2 lzl lzl  4096 Sep 28 01:08 tmp_study<br>touch –创建一个新文件</p>
-<p>  lzl@ubuntu:~/lzl$ cd linuxStudy/<br>  lzl@ubuntu:~/lzl/linuxStudy$ touch study01.txt<br>  lzl@ubuntu:~/lzl/linuxStudy$ ls -l<br>  total 0<br>  -rw-rw-r– 1 lzl lzl 0 Oct 11 23:44 study01.txt<br>touch –创建一个带内容的文件</p>
-<p>  lzl@ubuntu:~/lzl/linuxStudy$ cat study01.txt<br>  lzl@ubuntu:~/lzl/linuxStudy$ echo “hello Linux!” &gt; study01.txt<br>  lzl@ubuntu:~/lzl/linuxStudy$ cat study01.txt<br>  hello Linux!<br>cp –拷贝文件    </p>
+            <h2 id="1-文件指令的基本操作"><a href="#1-文件指令的基本操作" class="headerlink" title="- 1.文件指令的基本操作"></a>- 1.文件指令的基本操作</h2><p>pwd –查看当前位置</p>
+<pre><code>$ pwd
+/home/lzl/lzl
+</code></pre><p>cd –进入某个文件夹</p>
+<pre><code>进入familyA文件中    
+~/lzl$ cd familyA/
+~/lzl/familyA
+$ cd ..
+</code></pre><p>ls –显示该路径下的所有信息</p>
+<pre><code>~/lzl$ ls
+familyA  Son.txt  study01.txt  tmp_study
+~/lzl$ ls -l
+total 36
+drwxrwxr-x 4 lzl lzl  4096 Sep 28 01:15 familyA
+-rw-rw-r-- 1 lzl lzl  1625 Sep 28 03:01 Son.txt
+-rw-rw-r-- 1 lzl lzl 22035 Sep 29 23:24 study01.txt
+drwxrwxr-x 2 lzl lzl  4096 Sep 28 01:08 tmp_study
+</code></pre><p>mkdir –创建文件夹</p>
+<pre><code>~/lzl$ mkdir linuxStudy
+~/lzl$ ls -l
+total 40
+drwxrwxr-x 4 lzl lzl  4096 Sep 28 01:15 familyA
+drwxrwxr-x 2 lzl lzl  4096 Oct 11 23:42 linuxStudy
+-rw-rw-r-- 1 lzl lzl  1625 Sep 28 03:01 Son.txt
+-rw-rw-r-- 1 lzl lzl 22035 Sep 29 23:24 study01.txt
+drwxrwxr-x 2 lzl lzl  4096 Sep 28 01:08 tmp_study
+</code></pre><p>touch –创建一个新文件</p>
+<pre><code>lzl@ubuntu:~/lzl$ cd linuxStudy/
+lzl@ubuntu:~/lzl/linuxStudy$ touch study01.txt
+lzl@ubuntu:~/lzl/linuxStudy$ ls -l
+total 0
+-rw-rw-r-- 1 lzl lzl 0 Oct 11 23:44 study01.txt
+</code></pre><p>touch –创建一个带内容的文件</p>
+<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ cat study01.txt 
+lzl@ubuntu:~/lzl/linuxStudy$ echo &quot;hello Linux!&quot; &gt; study01.txt 
+lzl@ubuntu:~/lzl/linuxStudy$ cat study01.txt 
+hello Linux!
+</code></pre><p>cp –拷贝文件    </p>
 <blockquote>
 <p>cp +文件名 +路径</p>
 </blockquote>
-<p>  lzl@ubuntu:~/lzl/linuxStudy$ cp study01.txt /home/lzl/lzl/familyA/<br>  lzl@ubuntu:~/lzl/linuxStudy$ cd ../familyA/<br>  lzl@ubuntu:~/lzl/familyA$ ls -l<br>  total 12<br>  -rw-rw-r– 1 lzl lzl0 Sep 28 01:15 daughter.txt<br>  -rw-rw-r– 1 lzl lzl0 Sep 28 01:14 erzi<br>  drwxrwxr-x 2 lzl lzl 4096 Sep 28 01:15 fangzi<br>  -rw-rw-r– 1 lzl lzl0 Sep 28 01:14 father.txt<br>  drwxrwxr-x 9 lzl lzl 4096 Sep 28 01:45 house<br>  -rw-rw-r– 1 lzl lzl0 Sep 28 01:14 mothre.txt<br>  -rw-rw-r– 1 lzl lzl0 Sep 28 01:15 nver<br>  -rw-rw-r– 1 lzl lzl0 Sep 28 01:14 son.txt<br>  -rw-rw-r– 1 lzl lzl   13 Oct 11 23:49 study01.txt</p>
-</li>
-</ul>
-<p>rm –删除文件</p>
+<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ cp study01.txt /home/lzl/lzl/familyA/
+lzl@ubuntu:~/lzl/linuxStudy$ cd ../familyA/
+lzl@ubuntu:~/lzl/familyA$ ls -l
+total 12
+-rw-rw-r-- 1 lzl lzl0 Sep 28 01:15 daughter.txt
+-rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 erzi
+drwxrwxr-x 2 lzl lzl 4096 Sep 28 01:15 fangzi
+-rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 father.txt
+drwxrwxr-x 9 lzl lzl 4096 Sep 28 01:45 house
+-rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 mothre.txt
+-rw-rw-r-- 1 lzl lzl0 Sep 28 01:15 nver
+-rw-rw-r-- 1 lzl lzl0 Sep 28 01:14 son.txt
+-rw-rw-r-- 1 lzl lzl   13 Oct 11 23:49 study01.txt
+</code></pre><p>rm –删除文件</p>
 <blockquote>
 <p>rm +文件名（必须是文件名）</p>
 </blockquote>
