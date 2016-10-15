@@ -114,7 +114,7 @@ ls –显示该路径下的所有信息
 familyA  Son.txt  study01.txt  tmp_study
 ~/lzl$ ls -l
 total">
-<meta property="og:updated_time" content="2016-10-14T01:30:10.482Z">
+<meta property="og:updated_time" content="2016-10-15T02:04:24.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux基本指令学习（一）">
 <meta name="twitter:description" content="- 1.文件指令的基本操作pwd –查看当前位置
@@ -525,6 +525,170 @@ lzl@ubuntu:/home$ hostname -i
 </code></pre><p>uname –显示系统信息<br>uname -a 显示全部信息（内核名称，主机名，等）</p>
 <pre><code>lzl@ubuntu:/home$ uname -a
 Linux ubuntu 4.4.0-38-generic #57-Ubuntu SMP Tue Sep 6 15:42:33 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre><p>top –显示当前系统中耗费资源最多的进程，动态显示过程，实时监控</p>
+<pre><code>lzl@ubuntu:~$ top
+top - 23:20:10 up 6 min,  1 user,  load average: 1.32, 1.38, 0.77
+Tasks: 249 total,   1 running, 247 sleeping,   0 stopped,   1 zombie
+%Cpu(s): 15.2 us,  5.7 sy,  0.4 ni, 72.8 id,  5.7 wa,  0.0 hi,  0.4 si,  0.0 st
+KiB Mem :   998388 total,    75560 free,   588888 used,   333940 buff/cache
+KiB Swap:  1045500 total,   931964 free,   113536 used.   197480 avail Mem 
+   PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND                                                                    
+  4014 root      20   0  358972  35536  15384 S 10.2  3.6   0:05.58 Xorg                                                                       
+  4888 lzl       20   0 1169848  44240  19736 S  5.0  4.4   0:07.94 compiz                                                                     
+</code></pre><p>ps 显示瞬间进程状态</p>
+<blockquote>
+<p>ps -aux 显示所有瞬间进程状态<br>    lzl@ubuntu:~$ ps</p>
+</blockquote>
+<pre><code>PID TTY          TIME    CMD
+5378 pts/1    00:00:00   bash
+5892 pts/1    00:00:00   ps
+</code></pre><p>du 显示指定的文件(目录)已使用的磁盘空间的总量，可以使用–help查看帮助</p>
+<pre><code>lzl@ubuntu:~/lzl/familyA$ du 
+4    ./house/chufang
+32    ./house
+4    ./fangzi
+44    .
+lzl@ubuntu:~/lzl/familyA$ du fangzi
+4    fangzi
+</code></pre><p>df –显示文件系统磁盘空间的使用情况</p>
+<blockquote>
+<p>df -h</p>
+</blockquote>
+<pre><code>lzl@ubuntu:~/lzl/familyA$ df -h
+Filesystem  Size  Used Avail Use% Mounted on
+udev469M 0  469M   0% /dev
+tmpfs98M  6.2M   92M   7% /run
+/dev/sda149G  9.0G   37G  20% /
+tmpfs   488M  212K  488M   1% /dev/shm
+tmpfs   5.0M  4.0K  5.0M   1% /run/lock
+tmpfs   488M 0  488M   0% /sys/fs/cgroup
+tmpfs98M   64K   98M   1% /run/user/1000
+</code></pre><p>free –显示当前内存和交换空间的使用情况</p>
+<pre><code>lzl@ubuntu:~/lzl/familyA$ free
+  totalusedfree  shared  buff/cache   available
+Mem: 998388  533612   964048884  368372  261220
+Swap:   1045500  172640  872860
+</code></pre><p>ifconfig –显示网络接口信息</p>
+<pre><code>lzl@ubuntu:~/lzl/familyA$ ifconfig
+ens33     Link encap:Ethernet  HWaddr 00:0c:29:02:e8:ab  
+  inet addr:192.168.119.129  Bcast:192.168.119.255  Mask:255.255.255.0
+  inet6 addr: fe80::6c67:b87b:336d:fc67/64 Scope:Link
+  UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+  RX packets:39015 errors:0 dropped:0 overruns:0 frame:0
+  TX packets:17193 errors:0 dropped:0 overruns:0 carrier:0
+  collisions:0 txqueuelen:1000 
+  RX bytes:51782377 (51.7 MB)  TX bytes:1049241 (1.0 MB)
+</code></pre><p>ping –测试网络的连通性</p>
+<blockquote>
+<p>ping +IP</p>
+</blockquote>
+<pre><code>lzl@ubuntu:~/lzl/familyA$ ping 10.18.250.120
+PING 10.18.250.120 (10.18.250.120) 56(84) bytes of data.
+64 bytes from 10.18.250.120: icmp_seq=1 ttl=128 time=1.42 ms
+64 bytes from 10.18.250.120: icmp_seq=2 ttl=128 time=1.80 ms
+64 bytes from 10.18.250.120: icmp_seq=3 ttl=128 time=1.42 ms
+</code></pre><p>netstat 显示网络状态信息</p>
+<pre><code>unix  3      [ ]         STREAM     CONNECTED     27293    
+unix  3      [ ]         STREAM     CONNECTED     26034    
+unix  3      [ ]         STREAM     CONNECTED     25756    /run/systemd/journal/
+</code></pre><h2 id="3-备份压缩命令"><a href="#3-备份压缩命令" class="headerlink" title="- 3.备份压缩命令"></a>- 3.备份压缩命令</h2><p>gzip –命令</p>
+<blockquote>
+<ul>
+<li>压缩文件</li>
+<li>把lzl目录下的famailyA目录所有文件压缩成.gz文件</li>
+<li>tar -cvf +压缩后的路径名 +要压缩的文件路径</li>
+</ul>
+</blockquote>
+<pre><code>tar -cvf /home/lzl/lzl/familyA/.tar /home/lzl/lzl/familyA/  首先进行打包，因为gzip不能直接对目录进行压缩
+lzl@ubuntu:~/lzl$ gzip familyA.tar 进行压缩
+lzl@ubuntu:~/lzl$ gzip -l familyA.tar.gz  查看压缩包详情
+compressed        uncompressed  ratio uncompressed_name
+644               30720  98.0% familyA.tar
+</code></pre><blockquote>
+<ul>
+<li>解压缩命令</li>
+<li>将myname.tar.g解压缩</li>
+<li>tar  -zxvf   压缩文件名.tar.gz</li>
+</ul>
+</blockquote>
+<pre><code>lzl@ubuntu:~/lzl/linuxStudy$ tar -zxvf myname.tar.gz 
+home/lzl/lzl/linuxStudy/
+home/lzl/lzl/linuxStudy/study01.txt
+lzl@ubuntu:~/lzl/linuxStudy$ 
+</code></pre><p>bzip2 –命令</p>
+<blockquote>
+<ul>
+<li>压缩命令</li>
+<li>将linuxStudy文件夹进行压缩</li>
+<li>bzip2 -z linuxStudy.tar  需要加上-z参数</li>
+</ul>
+</blockquote>
+<pre><code>tar -cvf /home/lzl/lzl/study.tar /home/lzl/lzl/linuxStudy/
+lzl@ubuntu:~/lzl$ bzip2 -z study.tar 
+-rw-rw-r-- 1 lzl lzl   601 Oct 14 01:07 study.tar.bz2
+</code></pre><blockquote>
+<ul>
+<li>解压缩study.tar.bz2</li>
+<li>tar -jxvf study.tar.bz2</li>
+</ul>
+</blockquote>
+<pre><code>lzl@ubuntu:~/lzl$ tar -jxvf study.tar.bz2 
+home/lzl/lzl/linuxStudy/
+home/lzl/lzl/linuxStudy/study01.txt
+home/lzl/lzl/linuxStudy/home/
+home/lzl/lzl/linuxStudy/home/lzl/
+home/lzl/lzl/linuxStudy/home/lzl/lzl/
+home/lzl/lzl/linuxStudy/home/lzl/lzl/linuxStudy/
+home/lzl/lzl/linuxStudy/home/lzl/lzl/linuxStudy/study01.txt
+home/lzl/lzl/linuxStudy/myname.tar.gz
+</code></pre><p>tar –命令</p>
+<blockquote>
+<p>仅打包，不压缩</p>
+</blockquote>
+<pre><code>tar -cvf /home/lzl/lzl/familyA.tar /home/lzl/lzl/familyA
+</code></pre><blockquote>
+<p>打包后，以gzip压缩</p>
+</blockquote>
+<pre><code>tar -zcvf /home/lzl/lzl/familyA.tar.gz /home/lzl/lzl/itcast/familyA
+</code></pre><blockquote>
+<p>打包后，以bzip2压缩</p>
+</blockquote>
+<pre><code>tar -jcvf /home/lzl/lzl/familyA.tar.bz2 /home/lzl/lzl/familyA
+
+# 特别注意，在参数f之后的文件档名是自己取的，我们习惯上都用.tar来作为辨识
+# 如果加z参数，则以.tar.gz或.tgz来代表gzip压缩过的tar file
+# 如果加j参数，则以.tar.bz2来作为文档名
+</code></pre><h2 id="4-Ubuntu软件包管理"><a href="#4-Ubuntu软件包管理" class="headerlink" title="- 4.Ubuntu软件包管理"></a>- 4.Ubuntu软件包管理</h2><p>sudo dpkg -l –查看Ubuntu系统已安装所有软件包列表</p>
+<pre><code>lzl@ubuntu:~/lzl$ sudo dpkg -l
+[sudo] password for lzl: 
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name   Version  Architecture Description
++++-==============-============-============-=================================
+ii  a11y-profile-m 0.1.10-0ubun amd64Accessibility Profile Manager - U
+ii  account-plugin 0.12+16.04.2 all  GNOME Control Center account plug
+ii  account-plugin 0.12+16.04.2 all  GNOME Control Center account plug
+ii  account-plugin 0.12+16.04.2 all  GNOME Control Center account plug
+</code></pre><p>sudo lsb_release -a –查看系统版本信息</p>
+<pre><code>lzl@ubuntu:~/lzl$ sudo lsb_release -a
+No LSB modules are available.
+Distributor ID:    Ubuntu
+Description:    Ubuntu 16.04.1 LTS
+Release:    16.04
+Codename:    xenial
+</code></pre><p>安装软件 </p>
+<pre><code>sudo apt-get install softname1 softname2 softname3……
+</code></pre><p>卸载软件命令：</p>
+<pre><code>sudo apt-get remove softname1 softname2 softname3……
+</code></pre><p>卸载并清除配置命令：</p>
+<pre><code>sudo apt-get remove --purge softname1
+</code></pre><p>更新软件信息数据库命令： </p>
+<pre><code>sudo apt-get update
+</code></pre><p>进行系统升级命令： </p>
+<pre><code>sudo apt-get upgrade
+</code></pre><p>搜索软件包命令： </p>
+<pre><code>sudo apt-cache search softname1 softname2 softname3……
 </code></pre>
       
     </div>
@@ -722,6 +886,10 @@ Linux ubuntu 4.4.0-38-generic #57-Ubuntu SMP Tue Sep 6 15:42:33 UTC 2016 x86_64 
                   <a href="http://ieayoio.tk/" title="ieayoio" target="_blank">ieayoio</a>
                 </li>
               
+                <li class="links-of-blogroll-item">
+                  <a href="https://zhuyaoguang.github.io/" title="zhuyaoguang" target="_blank">zhuyaoguang</a>
+                </li>
+              
             </ul>
           </div>
         
@@ -735,7 +903,7 @@ Linux ubuntu 4.4.0-38-generic #57-Ubuntu SMP Tue Sep 6 15:42:33 UTC 2016 x86_64 
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-文件指令的基本操作"><span class="nav-number">1.</span> <span class="nav-text">- 1.文件指令的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-系统管理命令"><span class="nav-number">2.</span> <span class="nav-text">- 2.系统管理命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-文件指令的基本操作"><span class="nav-number">1.</span> <span class="nav-text">- 1.文件指令的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-系统管理命令"><span class="nav-number">2.</span> <span class="nav-text">- 2.系统管理命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-备份压缩命令"><span class="nav-number">3.</span> <span class="nav-text">- 3.备份压缩命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Ubuntu软件包管理"><span class="nav-number">4.</span> <span class="nav-text">- 4.Ubuntu软件包管理</span></a></li></ol></div>
             
           </div>
         </section>
