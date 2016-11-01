@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Linux," />
+  <meta name="keywords" content="JavaWeb," />
 
 
 
@@ -84,64 +84,39 @@
 
 
 
-<meta name="description" content="- 1.VIM编辑器VIM –编辑器
-
-
-编辑today.txt文件 vim today.txt
-数据命令i 进入插入模式
-输入内容 AAABBBCCC
-ctrl+c 退出插入模式或者敲击ESC切换命令
-:wq +回车 –保存并退出
-:q! +回车 –强制退出
-：set number + 回车 –设置行号
-/+字符串 查找关键字
-
-
-1 nihao!
-2 AAABBBCCC
-3 helerj
-4">
+<meta name="description" content="- 环境准备
+在github中下载spring源码https://github.com/SpringSource/spring-framework/
+下载Gradle自动化构建工具，http://services.gradle.org/distributions
+配置环境变量：
+GRADLE_HOME:D:\gradle-2.8
+PATH:    D:\gradle-2.8\bin
+测试是否配置成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux基本指令学习（二）">
-<meta property="og:url" content="https://hpulzl.github.io/2016/10/15/Linux基本指令学习（二）/index.html">
+<meta property="og:title" content="eclipse导入spring源码">
+<meta property="og:url" content="https://hpulzl.github.io/2016/10/31/导入spring源码/index.html">
 <meta property="og:site_name" content="hpulzl的博客">
-<meta property="og:description" content="- 1.VIM编辑器VIM –编辑器
-
-
-编辑today.txt文件 vim today.txt
-数据命令i 进入插入模式
-输入内容 AAABBBCCC
-ctrl+c 退出插入模式或者敲击ESC切换命令
-:wq +回车 –保存并退出
-:q! +回车 –强制退出
-：set number + 回车 –设置行号
-/+字符串 查找关键字
-
-
-1 nihao!
-2 AAABBBCCC
-3 helerj
-4">
-<meta property="og:updated_time" content="2016-10-18T09:42:14.270Z">
+<meta property="og:description" content="- 环境准备
+在github中下载spring源码https://github.com/SpringSource/spring-framework/
+下载Gradle自动化构建工具，http://services.gradle.org/distributions
+配置环境变量：
+GRADLE_HOME:D:\gradle-2.8
+PATH:    D:\gradle-2.8\bin
+测试是否配置成">
+<meta property="og:image" content="https://hpulzl.github.io/img/spring/build/编译spring源码.png">
+<meta property="og:image" content="https://hpulzl.github.io/img/spring/build/spring编译成功.png">
+<meta property="og:image" content="https://hpulzl.github.io/img/spring/build/错误信息.png">
+<meta property="og:image" content="https://hpulzl.github.io/img/spring/build/导入eclipse又见bug.png">
+<meta property="og:updated_time" content="2016-11-01T14:32:19.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux基本指令学习（二）">
-<meta name="twitter:description" content="- 1.VIM编辑器VIM –编辑器
-
-
-编辑today.txt文件 vim today.txt
-数据命令i 进入插入模式
-输入内容 AAABBBCCC
-ctrl+c 退出插入模式或者敲击ESC切换命令
-:wq +回车 –保存并退出
-:q! +回车 –强制退出
-：set number + 回车 –设置行号
-/+字符串 查找关键字
-
-
-1 nihao!
-2 AAABBBCCC
-3 helerj
-4">
+<meta name="twitter:title" content="eclipse导入spring源码">
+<meta name="twitter:description" content="- 环境准备
+在github中下载spring源码https://github.com/SpringSource/spring-framework/
+下载Gradle自动化构建工具，http://services.gradle.org/distributions
+配置环境变量：
+GRADLE_HOME:D:\gradle-2.8
+PATH:    D:\gradle-2.8\bin
+测试是否配置成">
+<meta name="twitter:image" content="https://hpulzl.github.io/img/spring/build/编译spring源码.png">
 
 
 
@@ -162,10 +137,10 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
 
 
 
-  <link rel="canonical" href="https://hpulzl.github.io/2016/10/15/Linux基本指令学习（二）/"/>
+  <link rel="canonical" href="https://hpulzl.github.io/2016/10/31/导入spring源码/"/>
 
 
-  <title> Linux基本指令学习（二） | hpulzl的博客 </title>
+  <title> eclipse导入spring源码 | hpulzl的博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -315,7 +290,7 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
             
             
               
-                Linux基本指令学习（二）
+                eclipse导入spring源码
               
             
           </h1>
@@ -327,8 +302,8 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-15T10:05:30+08:00" content="2016-10-15">
-              2016-10-15
+            <time itemprop="dateCreated" datetime="2016-10-31T09:36:36+08:00" content="2016-10-31">
+              2016-10-31
             </time>
           </span>
 
@@ -341,8 +316,8 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Linux学习/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux学习</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -357,8 +332,8 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/15/Linux基本指令学习（二）/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/15/Linux基本指令学习（二）/" itemprop="commentsCount"></span>
+                <a href="/2016/10/31/导入spring源码/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/31/导入spring源码/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -368,7 +343,7 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
 
           
           
-             <span id="/2016/10/15/Linux基本指令学习（二）/" class="leancloud_visitors" data-flag-title="Linux基本指令学习（二）">
+             <span id="/2016/10/31/导入spring源码/" class="leancloud_visitors" data-flag-title="eclipse导入spring源码">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -390,67 +365,43 @@ ctrl+c 退出插入模式或者敲击ESC切换命令
       
 
       
-        <h2 id="1-VIM编辑器"><a href="#1-VIM编辑器" class="headerlink" title="- 1.VIM编辑器"></a>- 1.VIM编辑器</h2><p>VIM –编辑器</p>
-<blockquote>
+        <h2 id="环境准备"><a href="#环境准备" class="headerlink" title="- 环境准备"></a>- 环境准备</h2><ol>
+<li>在github中下载spring源码<a href="https://github.com/SpringSource/spring-framework/" title="https://github.com/SpringSource/spring-framework/" target="_blank" rel="external">https://github.com/SpringSource/spring-framework/</a></li>
+<li><p>下载Gradle自动化构建工具，<a href="http://services.gradle.org/distributions" title="http://services.gradle.org/distributions" target="_blank" rel="external">http://services.gradle.org/distributions</a></p>
+<pre><code>配置环境变量：
+GRADLE_HOME:D:\gradle-2.8
+PATH:    D:\gradle-2.8\bin
+</code></pre><p>测试是否配置成功：</p>
+<pre><code>`gradle -v出现有版本信息就是成功`
+</code></pre></li>
+<li>编译spring源码<br> <img src="/img/spring/build/编译spring源码.png" alt="编译spring源码"><pre><code>gradle eclipse -x:eclipse
+gradle eclipse -x:eclipse --debug //debug模式编译
+</code></pre></li>
+<li><p><strong>错误提示</strong></p>
+<p> <strong>java.lang.UnsupportedClassVersionError: org/sonarqube/gradle/<br> SonarQubePlugin : Unsupported major.minor version</strong></p>
+<p> 原因是JDK版本不符，重新更换JDK版本，并配置环境变量</p>
+</li>
+<li><p>目前版本配置信息</p>
 <ul>
-<li>编辑today.txt文件 vim today.txt</li>
-<li>数据命令i 进入插入模式</li>
-<li>输入内容 AAABBBCCC</li>
-<li>ctrl+c 退出插入模式或者敲击ESC切换命令</li>
-<li>:wq +回车 –保存并退出</li>
-<li>:q! +回车 –强制退出</li>
-<li>：set number + 回车 –设置行号</li>
-<li>/+字符串 查找关键字</li>
+<li>JDK:jdk1.8.0_101</li>
+<li>gradle: 2.8</li>
+<li><p>spring: github上下载的应该是最新的</p>
+<p><img src="/img/spring/build/spring编译成功.png" alt="spring编译成功"><br>-源码导入到eclipse</p>
+</li>
 </ul>
-</blockquote>
-<pre><code>1 nihao!
-2 AAABBBCCC
-3 helerj
-4 shenmegui
-:set number  
-</code></pre><h2 id="2-用户和组管理"><a href="#2-用户和组管理" class="headerlink" title="-2.用户和组管理"></a>-2.用户和组管理</h2><p>添加一个账户</p>
-<blockquote>
-<p>useradd -m zyg 参数-m用来设定系统添加账户时自动添加一个根目录。</p>
-</blockquote>
-<pre><code>root@ubuntu:/home/lzl/lzl/linuxStudy# useradd -m zyg
-</code></pre><p>修改zyg账户的登录名称</p>
-<pre><code>root@ubuntu:/home/lzl/lzl/linuxStudy# usermod -l zhuyg zyg
-</code></pre><p>锁定用户账号密码</p>
-<blockquote>
-<p>usermod -L zhuyg 锁定账号不可使用</p>
-</blockquote>
-<p>解锁用户账号密码</p>
-<blockquote>
-<p> usermod -U zhuyg</p>
-</blockquote>
-<p>添加一个分组</p>
-<pre><code>root@ubuntu:/home/lzl# groupadd superman
-</code></pre><p>修改superman分组</p>
-<pre><code>root@ubuntu:/home/lzl# groupmod -g 355 superman
-</code></pre><p>删除superman分组</p>
-<pre><code>root@ubuntu:/home/lzl# groupdel superman
-</code></pre><p>切换用户</p>
-<blockquote>
-<ul>
-<li>su -用户名 –切换用户</li>
-<li>sudo -i 切换到root</li>
-</ul>
-</blockquote>
-<p>删除zyg账号 </p>
-<pre><code>userdel -r zyg (-r 连同用户目录一起删除)
-</code></pre><p>查看分组</p>
-<pre><code>cat /etc/group
-</code></pre><h2 id="3-文件权限管理"><a href="#3-文件权限管理" class="headerlink" title="-3.文件权限管理"></a>-3.文件权限管理</h2><blockquote>
-<ul>
-<li>以管理员hhhh进行文件操作，会提示</li>
-</ul>
-</blockquote>
-<pre><code>hhhh@ubuntu:/home$ cd /home/lzl/lzl/familyA/
-hhhh@ubuntu:/home/lzl/lzl/familyA$ vim son.txt 
-E45: &apos;readonly&apos; option is set (add ! to override)
-</code></pre><p>修改son.txt文件的权限</p>
-<pre><code>root@ubuntu:/home/lzl/lzl/familyA# chmod o+w son.txt 
-</code></pre>
+</li>
+</ol>
+<hr>
+<p><strong>6. 解决报错</strong><br><img src="/img/spring/build/错误信息.png" alt="错误信息"></p>
+<ol>
+<li>导入代码提示缺少spring-cglib-repack-3.2.4.jar和spring-objenesis-repack-2.4.jar包。下载并导入到spring-core中</li>
+<li><p>下载groovy插件<br> <a href="http://dist.springsource.org/milestone/GRECLIPSE/e4.5/" title="http://dist.springsource.org/milestone/GRECLIPSE/e4.4/" target="_blank" rel="external">http://dist.springsource.org/milestone/GRECLIPSE/e4.5/</a></p>
+</li>
+<li><p>Project ‘spring-oxm’ is missing required library: ‘E:\SourceCode\spring-framework\spring-oxm\build\classes\castor’<br><img src="/img/spring/build/导入eclipse又见bug.png" alt="导入eclipse又见bug"></p>
+<p> 我是手动将这几个jar包导入到spring-oxm中的。<br> 使用gradle重新编译一下spring-oxm文件<br> gradle cleanIdea :spring-oxm:compileTestJava</p>
+</li>
+</ol>
+
       
     </div>
 
@@ -493,7 +444,7 @@ E45: &apos;readonly&apos; option is set (add ! to override)
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag">#Linux</a>
+            <a href="/tags/JavaWeb/" rel="tag">#JavaWeb</a>
           
         </div>
       
@@ -502,17 +453,13 @@ E45: &apos;readonly&apos; option is set (add ! to override)
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/10/12/Linux基本指令学习（一）/" rel="next" title="Linux基本指令学习（一）">
-                <i class="fa fa-chevron-left"></i> Linux基本指令学习（一）
+              <a href="/2016/10/22/Maven软件管理学习/" rel="next" title="Maven软件管理学习">
+                <i class="fa fa-chevron-left"></i> Maven软件管理学习
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/10/22/Maven软件管理学习/" rel="prev" title="Maven软件管理学习">
-                Maven软件管理学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -538,8 +485,8 @@ E45: &apos;readonly&apos; option is set (add ! to override)
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/15/Linux基本指令学习（二）/"
-           data-title="Linux基本指令学习（二）" data-url="https://hpulzl.github.io/2016/10/15/Linux基本指令学习（二）/">
+      <div class="ds-thread" data-thread-key="2016/10/31/导入spring源码/"
+           data-title="eclipse导入spring源码" data-url="https://hpulzl.github.io/2016/10/31/导入spring源码/">
       </div>
     
   </div>
@@ -668,7 +615,7 @@ E45: &apos;readonly&apos; option is set (add ! to override)
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-VIM编辑器"><span class="nav-number">1.</span> <span class="nav-text">- 1.VIM编辑器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-用户和组管理"><span class="nav-number">2.</span> <span class="nav-text">-2.用户和组管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-文件权限管理"><span class="nav-number">3.</span> <span class="nav-text">-3.文件权限管理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.</span> <span class="nav-text">- 环境准备</span></a></li></ol></div>
             
           </div>
         </section>
