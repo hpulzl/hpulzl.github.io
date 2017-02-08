@@ -106,7 +106,7 @@ PATH:    D:\gradle-2.8\bin
 <meta property="og:image" content="https://hpulzl.github.io/img/spring/build/spring编译成功.png">
 <meta property="og:image" content="https://hpulzl.github.io/img/spring/build/错误信息.png">
 <meta property="og:image" content="https://hpulzl.github.io/img/spring/build/导入eclipse又见bug.png">
-<meta property="og:updated_time" content="2016-11-01T14:32:19.275Z">
+<meta property="og:updated_time" content="2016-11-01T14:48:47.166Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="eclipse导入spring源码">
 <meta name="twitter:description" content="- 环境准备
@@ -398,7 +398,7 @@ gradle eclipse -x:eclipse --debug //debug模式编译
 <li><p>下载groovy插件<br> <a href="http://dist.springsource.org/milestone/GRECLIPSE/e4.5/" title="http://dist.springsource.org/milestone/GRECLIPSE/e4.4/" target="_blank" rel="external">http://dist.springsource.org/milestone/GRECLIPSE/e4.5/</a></p>
 </li>
 <li><p>Project ‘spring-oxm’ is missing required library: ‘E:\SourceCode\spring-framework\spring-oxm\build\classes\castor’<br><img src="/img/spring/build/导入eclipse又见bug.png" alt="导入eclipse又见bug"></p>
-<p> 我是手动将这几个jar包导入到spring-oxm中的。<br> 使用gradle重新编译一下spring-oxm文件<br> gradle cleanIdea :spring-oxm:compileTestJava</p>
+<p> gradle下载的依赖包中包含有castor和jaxb的jar包。然后手动将jar包添加到spring-oxm的bin中。</p>
 </li>
 </ol>
 
@@ -460,6 +460,10 @@ gradle eclipse -x:eclipse --debug //debug模式编译
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/07/读《骆驼祥子》有感（一）/" rel="prev" title="读《骆驼祥子》有感（一）">
+                读《骆驼祥子》有感（一） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,7 +535,7 @@ gradle eclipse -x:eclipse --debug //debug模式编译
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -539,7 +543,7 @@ gradle eclipse -x:eclipse --debug //debug模式编译
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -548,7 +552,7 @@ gradle eclipse -x:eclipse --debug //debug模式编译
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -636,7 +640,7 @@ gradle eclipse -x:eclipse --debug //debug模式编译
 <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
